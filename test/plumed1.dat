@@ -1,0 +1,6 @@
+data: READ FILE=testdata1.txt VALUES=rand
+av: AVERAGE ARG=data STRIDE=1
+av_block: AVERAGE ARG=data STRIDE=1 CLEAR=100
+
+PRINT ARG=av STRIDE=1 FILE=colvar_noblock.txt
+PRINT ARG=av_block STRIDE=100 FILE=colvar_block100.txt
